@@ -13,7 +13,13 @@ var passwordCharacters = '';
 // Prompt to get desired password length
 function lengthPrompt(){
 
-  var passLength = parseInt(window.prompt("Please enter the length of your password (min: 8, max: 128)"));
+  var passLength = window.prompt("Please enter the length of your password (min: 8, max: 128)");
+  
+  if(passLength === null){
+    return;
+  } else {
+    parseInt;
+  }
 
   while(isNaN(passLength) == true || passLength < 8 || passLength > 128){
   
@@ -22,7 +28,7 @@ function lengthPrompt(){
 
     if(isNaN(passLength) == false && passLength > 8 && passLength < 128){
       break;
-    }
+    } 
   }
   return passLength;
 }
@@ -68,6 +74,10 @@ function generatePassword() {
 
   // get the password length
   var passwordLength = lengthPrompt();
+  console.log("line 17: " + passwordLength);
+  if(passwordLength == null){
+    return;
+  }
 
   // get character types lowercase, uppercase, numeric, and/or special characters
   characterTypes();
@@ -90,6 +100,9 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  if(password == null){
+    return;
+  }
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
