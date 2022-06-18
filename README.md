@@ -12,4 +12,4 @@ Generates password. Password length and character type choices are based on user
 https://abdallahamdy.github.io/password-generator/
 
 ## Screenshot:
-![Alt text](./Develop/website_screenshot.png?raw=true "Password generator website screenshot")
+![Alt text](./assets/css/images/website_screenshot.png?raw=true "Password generator website screenshot")
