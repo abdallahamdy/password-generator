@@ -36,7 +36,7 @@ function lengthPrompt(){
 function characterTypes(){
 
   isLowerCase = window.confirm("Would you like to include lower case characters?");
-  isUpperCase = window.confirm("Would you like to include uppder case characters?");
+  isUpperCase = window.confirm("Would you like to include upper case characters?");
   isNumeric = window.confirm("Would you like to include numeric characters?");
   isSpecial = window.confirm("Would you like to include special characters?");
 
