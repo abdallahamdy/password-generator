@@ -7,7 +7,7 @@ var isSpecial = '';
 var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numericChars = "1234567890";
-var specialChars = "!@#$%^&*()";
+var specialChars = "<>@!#$%^&*()_+[]{}?:;|'\"\\,./~`-=";
 var passwordCharacters = '';
 
 // Prompt to get desired password length
@@ -33,10 +33,11 @@ function lengthPrompt(){
   return passLength;
 }
 
+// to confirm with user what character types they would like
 function characterTypes(){
 
   isLowerCase = window.confirm("Would you like to include lower case characters?");
-  isUpperCase = window.confirm("Would you like to include uppder case characters?");
+  isUpperCase = window.confirm("Would you like to include upper case characters?");
   isNumeric = window.confirm("Would you like to include numeric characters?");
   isSpecial = window.confirm("Would you like to include special characters?");
 
@@ -50,6 +51,7 @@ function characterTypes(){
   
 }
 
+// this function adds the character types to the passwordCharacters string based on user choices
 function charGenerator(){
   passwordCharacters = '';
   if(isLowerCase){
@@ -86,13 +88,11 @@ function generatePassword() {
   // when we get required character types, append them into a string
   charGenerator(); 
 
-  // create the password string from the 
+  // create the password string from the characters string
   var thePassword = '';
   for(var i = 0; i < passwordLength; i++){
     var randomIndex = Math.floor(Math.random() * passwordCharacters.length);
-    // console.log("RandomIndex is: " + randomIndex);
-    // console.log("RandomChar is: " + passwordCharacters.charAt(randomIndex));
-    // console.log("Password characters are: " + passwordCharacters);
+
     thePassword = thePassword + passwordCharacters.charAt(randomIndex);
   }
 
